@@ -7,6 +7,8 @@ import landingvideo from "./landingvideo.mp4";
 import satellite from "./satellite.mp4";
 import logoImage from "./logoImage.svg"
 import { teampics } from "./team";
+import twitter from "./twitter.png";
+import linkedin from "./linkedin.png";
 
 export {
     logo,
@@ -18,4 +20,6 @@ export {
     satellite,
     logoImage,
     teampics,
+    twitter,
+    linkedin,
 }

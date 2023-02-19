@@ -11,6 +11,8 @@ import Satellite from "./Satellite";
 import BtnContactUs from "./utils/BtnContactUs";
 import WorkflowStep from "./utils/WorkflowStep";
 import TeamMember from "./utils/TeamMember";
+import ContactForm from "./utils/ContactForm";
+import SocialCard from "./utils/SocialCard";
 
 export {
     Navbar,
@@ -26,4 +28,6 @@ export {
     BtnContactUs,
     WorkflowStep,
     TeamMember,
+    ContactForm,
+    SocialCard,
 }

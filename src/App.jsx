@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './style.js'
-import { landingvideo } from './assets/index.js';
+import { landingvideo, logoImage } from './assets';
 import { Navbar, Hero, Features, Description, Workflow, CTA, Team, ContactUs, Footer, Satellite } from './components';
 
 const App = () => (
@@ -39,14 +39,17 @@ const App = () => (
     </div>
 
 
-    <div className={`bg-primary ${styles.paddingX} flex justify-center`}>
+    <div className={`bg-primary ${styles.paddingX} flex justify-center pb-10`}>
       <div className={`${styles.boxWidth}`}>
         <Team/>
         <ContactUs/>
-        <Footer/>
       </div>
     </div>
 
+    <div>
+      <div className='bg-white w-full h-[3px]'/>
+      <Footer/>
+    </div>
   </div>
 );
 

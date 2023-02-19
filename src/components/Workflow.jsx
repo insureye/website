@@ -6,7 +6,7 @@ import { WorkflowStep} from '../components';
 
 const Workflow = () => {
   return (
-    <div className='flex flex-row w-full py-20'>
+    <div className='flex flex-row flex-wrap w-full py-20'>
       <div className='flex flex-col flex-start basis-1/2 items-center px-6'>
         <h1 className={`${styles.textTitle2} grow-0 py-8`}>
           { workflow.title }

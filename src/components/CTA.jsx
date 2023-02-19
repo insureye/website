@@ -5,7 +5,7 @@ import { BtnContactUs } from '../components';
 
 const CTA = () => {
   return (
-    <div className='flex flex-row py-20 w-full'>
+    <div className='flex flex-row flex-wrap py-20 w-full'>
       <h1 className={`${styles.textTitle2} px-6 basis-1/2 text-start`}>
         { cta.title }
       </h1>

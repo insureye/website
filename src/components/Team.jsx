@@ -27,14 +27,14 @@ function genTeamMember(name, tm) {
 
 const Team = () => {
   return (
-    <div className='flex flex-col py-20 w-full items-start'>
+    <div className='flex flex-col py-10 w-full items-start'>
       <h1 className={`${styles.textTitle2} py-6`}>
         { team.title }
       </h1>
       <p className={`${styles.paragraph2} py-6`}>
         { team.content1} <br/> {team.content2}
       </p>
-      <div className='flex flex-row py-6 w-full overflow-x-scroll items-start'>
+      <div className='flex flex-row pt-6 w-full overflow-x-scroll items-start'>
         { names.map((x) => genTeamMember(x, team.members)) }
       </div>
     </div>
