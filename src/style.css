@@ -1,0 +1,5 @@
+.nav_sep {
+    background: linear-gradient(125.06deg, #FF0000 -2.31%, #FFB600 48.44%, #79DEA8 97.12%);
+    opacity: 0.6;
+    filter: blur(10px);
+}
