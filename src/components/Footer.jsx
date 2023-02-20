@@ -9,8 +9,8 @@ const Footer = () => {
         <h1 className='text-white text-[20px] text-shadow pr-8'>
           Our galaxy:
         </h1>
-        <SocialCard image={twitter} name="Twitter"/>
-        <SocialCard image={linkedin} name="Linkedin"/>
+        <SocialCard image={twitter} name="Twitter" url="https://www.twitter.com"/>
+        <SocialCard image={linkedin} name="Linkedin" url="https://www.linkedin.com"/>
       </div>
       <div className='flex flex-row justify-between pb-3 pt-5'>
         <h1 className='text-white text-[12px]'>
