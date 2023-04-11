@@ -4,6 +4,18 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 500px) {
+  #video {
+    display: none
+  }
+  #image {
+    display: block
+  }
+}
 .nav-sep {
   background: linear-gradient(125.06deg, #FF0000 -2.31%, #FFB600 48.44%, #79DEA8 97.12%);
   opacity: 1;

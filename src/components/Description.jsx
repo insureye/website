@@ -6,16 +6,16 @@ import BtnContactUs from './utils/BtnContactUs';
 
 const Description = () => {
   return (
-    <div className='flex flex-row flex-wrap py-[75px] w-full'>
-      <div className='flex flex-1 basis-1/2 min-w-[200px] justify-center items-center'>
+    <div className='flex flex-row flex-wrap w-full justify-center gap-[5%] py-20'>
+      <div className='flex flex-col flex-start min-w-[350px] max-w-[45%] items-center px-6'>
         <img src={ scoop } alt="Scoop" className='w-3/4'/>
       </div>
 
-      <div className='flex flex-1 flex-col min-w-[200px] basis-1/2 justify-center items-center'>
-        <h1 className={`${styles.textTitle2} flex-1 w-full py-4`}>
+      <div className='flex flex-col flex-start min-w-[350px] max-w-[45%] items-center px-6'>
+        <h1 className={`${styles.textTitle2} w-[90%] pt-20`}>
           { cdescription.title }
         </h1>
-        <p className={`${styles.paragraph2} py-4 pb-8`}>
+        <p className={`${styles.paragraph2} py-4 pb-8 flex-1`}>
           { cdescription.content}
         </p>
         <BtnContactUs/>

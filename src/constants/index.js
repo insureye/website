@@ -49,14 +49,12 @@ export const cdescription = {
 };
 
 export const workflow = {
-  title: "Our Eye's workflow",
+  title: "Our Eye's products",
   content: "Our activities can be subscribed as a package or singularly, depending on your needs. The complete workflow provides unmatched automatization and work streamlining.",
   step: [
-    "Smart risk assesment",
-    "Near real-time asset monitoring",
-    "Post-event support and information",
-    "Forensic analysis",
-    "Claim settlement"
+    "Historical Analysis of risk variables in an area",
+    "Evolution of risk exposition of tracked assets",
+    "Catastrophe analysis for damages and claim settlement",
   ]
 };
 

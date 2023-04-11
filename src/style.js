@@ -1,7 +1,7 @@
 const styles = {
     /* Mine*/
-    textTitle2: "flex-1 font-poppins ss:text-[30px] text-white text-shadow text-center",
-    paragraph2: "ss:text-[18px] text-justify text-dimWhite",
+    textTitle2: "flex-1 font-poppins text-white text-shadow text-center text-[1.5rem] md:text-[30px]",
+    paragraph2: "text-[1rem] md:text-[18px] text-justify text-dimWhite",
     btnContactUs: "text-white bg-gradient-to-r from-gray-900 to-gray-700",
     btnContactUsHover: "hover:bg-gradient-to-r hover:from-gray-500 hover:to-gray-300 hover:text-black",
     formTitle: "",

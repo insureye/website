@@ -16,9 +16,9 @@ const Footer = () => {
         <h1 className='text-white text-[12px]'>
           Our terms & conditions
         </h1>
-        <h1 className='text-white text-[12px]'>
-          contact@insureye.space
-        </h1>
+        <a href="#ContactUs"className='text-white text-[12px]'>
+          insureye@gmail.com
+        </a>
       </div>
 
     </div>

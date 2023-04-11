@@ -13,6 +13,7 @@ import WorkflowStep from "./utils/WorkflowStep";
 import TeamMember from "./utils/TeamMember";
 import ContactForm from "./utils/ContactForm";
 import SocialCard from "./utils/SocialCard";
+import Home from "./Home";
 
 export {
     Navbar,
@@ -30,4 +31,5 @@ export {
     TeamMember,
     ContactForm,
     SocialCard,
+    Home,
 }

@@ -3,15 +3,15 @@ import styles from '../style';
 import { logo } from '../assets';
 import {BtnContactUs} from '../components';
 
-const Navbar = ({contactRef}) => {
+const Navbar = () => {
   return (
-    <div className={`z-10 ${styles.boxWidth} px-6 sm:px-16`}>
-      <nav className='w-full flex py-3 justify-between items-center navbar'>
-        <a>
-          <img src={logo} alt="InsurEye" className='cursor-pointer w-[135px] h-[40px]'/>
+    <div className="flex justify-center">
+      <nav className={`${styles.boxWidth} flex py-3 flex-row justify-between items-center`}>
+        <a className="px-10">
+          <img src={logo} href="#top" alt="InsurEye" className='cursor-pointer w-[135px] h-[40px]'/>
         </a>
-        <div>
-          <BtnContactUs onClick={contactRef} className='w-[146px] h-[48px]'/>
+        <div className="pr-6">
+          <BtnContactUs/>
         </div>
       </nav>
     </div>

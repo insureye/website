@@ -4,7 +4,7 @@ import { features } from '../constants';
 import styles from '../style';
 
 const Features = () => (
-  <div id="features" className='flex-col py-10'>
+  <div id="features" className='flex flex-col py-20'>
     <h1 className={`${styles.textTitle2}`}>
       { features.title }
     </h1>

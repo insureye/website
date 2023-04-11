@@ -6,8 +6,8 @@ import { WorkflowStep} from '../components';
 
 const Workflow = () => {
   return (
-    <div className='flex flex-row flex-wrap w-full py-20'>
-      <div className='flex flex-col flex-start basis-1/2 items-center px-6'>
+    <div className='flex flex-row flex-wrap w-full justify-center gap-[5%] py-20'>
+      <div className='flex flex-col flex-start min-w-[350px] max-w-[45%] items-center px-6'>
         <h1 className={`${styles.textTitle2} grow-0 py-8`}>
           { workflow.title }
         </h1>
@@ -19,12 +19,9 @@ const Workflow = () => {
         </div>
       </div>
 
-      <div className='flex flex-col space-between basis-1/2 items-center px-6'>
-        <WorkflowStep textContent={workflow.step[0]} ci={0}/>
-        <WorkflowStep textContent={workflow.step[1]} ci={1}/>
-        <WorkflowStep textContent={workflow.step[2]} ci={2}/>
-        <WorkflowStep textContent={workflow.step[3]} ci={3}/>
-        <WorkflowStep textContent={workflow.step[4]} ci={4}/>
+      <div className='flex flex-col min-w-[350px] max-w-[45%] space-between items-center px-6'>
+        {Array.from(workflow.step, (_,i) => <WorkflowStep key={i} textContent={workflow.step[i]} ci={i}/>)}
+        
       </div>
     </div>
   )

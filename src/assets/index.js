@@ -9,6 +9,7 @@ import logoImage from "./logoImage.svg"
 import { teampics } from "./team";
 import twitter from "./twitter.png";
 import linkedin from "./linkedin.png";
+import mobilelanding from "./mobilelanding.jpg";
 
 export {
     logo,
@@ -22,4 +23,5 @@ export {
     teampics,
     twitter,
     linkedin,
+    mobilelanding,
 }
