@@ -6,7 +6,7 @@ import { Home } from './components';
 import './index.css'
 
 const router = createBrowserRouter([
-  { path: '/', element: <Home /> },
+  { path: '/website', element: <Home /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
