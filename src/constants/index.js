@@ -82,7 +82,7 @@ export const team = {
     },
     'Francisco Cardeñoso': {
       image: teampics.francisco,
-      description: "Web developer, Master student in physics."
+      description: "Developer, Master student in physics."
     },
     'Daniele Franchi': {
       image: teampics.franchi,
