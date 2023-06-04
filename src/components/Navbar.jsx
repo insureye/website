@@ -15,7 +15,7 @@ const Navbar = () => {
             <BtnContactUs name="Contact Us" link="#ContactUs"/>
           </div>
           <div className="pr-6 right-0">
-            <BtnContactUs name="Try it" link="/app" reload={false}/>
+            <BtnContactUs name="Try it" link="/app"/>
           </div>
         </div>
       </nav>
