@@ -10,8 +10,13 @@ const Navbar = () => {
         <a className="px-10">
           <img src={logo} href="#top" alt="InsurEye" className='cursor-pointer w-[135px] h-[40px]'/>
         </a>
-        <div className="pr-6">
-          <BtnContactUs/>
+        <div className='flex flex-row items-left'>
+          <div className="pr-6">
+            <BtnContactUs name="Contact Us" link="#ContactUs"/>
+          </div>
+          <div className="pr-6 right-0">
+            <BtnContactUs name="Try it" link="/app"/>
+          </div>
         </div>
       </nav>
     </div>

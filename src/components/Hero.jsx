@@ -16,7 +16,7 @@ const Hero = () => (
           { hero.content }
         </p>
         <div className='flex items-start py-3'>
-          <BtnContactUs/>
+          <BtnContactUs name="Contact Us" link="#ContactUs"/>
         </div>
       </div>
     </div>

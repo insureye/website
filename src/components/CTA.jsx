@@ -14,7 +14,7 @@ const CTA = () => {
         <p className={`${styles.paragraph2} max-w-[400px] pb-6`}>
           { cta.content }
         </p>
-        <BtnContactUs/>
+        <BtnContactUs name="Contact Us" link="#ContactUs"/>
       </div>
     </div>
   )

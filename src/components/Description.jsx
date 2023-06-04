@@ -18,7 +18,7 @@ const Description = () => {
         <p className={`${styles.paragraph2} py-4 pb-8 flex-1`}>
           { cdescription.content}
         </p>
-        <BtnContactUs/>
+        <BtnContactUs name="Contact Us" link="#ContactUs"/>
       </div>
     </div>
   )
