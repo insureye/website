@@ -3,3 +3,8 @@
     opacity: 0.6;
     filter: blur(10px);
 }
+
+.leaflet-center {
+    left: 50%;
+    transform: translate(-50%, 0%);
+}

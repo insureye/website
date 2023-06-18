@@ -90,3 +90,9 @@ export const team = {
     },
   }
 }
+
+export const app = {
+  title: "Search location and draw your area",
+  searchbar: "Region, city, coordinate",
+  
+}

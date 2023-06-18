@@ -17,6 +17,11 @@ import Home from "./Home";
 import Map from "./Map"
 import MapToolBar from "./utils/MapToolBar";
 import StatefulBtn from "./utils/StatefulBtn";
+import App from "./App"
+import BtnRouter from "./utils/BtnRouter";
+import Dashboard from "./Dashboard";
+import DropdownBtn from "./utils/DropdownBtn";
+import PanelVariable from "./utils/PanelVariable";
 
 export {
     Navbar,
@@ -37,5 +42,10 @@ export {
     Home,
     Map,
     MapToolBar,
-    StatefulBtn
+    StatefulBtn,
+    App,
+    BtnRouter,
+    Dashboard,
+    DropdownBtn,
+    PanelVariable
 }

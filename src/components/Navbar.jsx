@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from '../style';
 import { logo } from '../assets';
-import {BtnContactUs} from '../components';
+import {BtnContactUs, BtnRouter} from '../components';
 
 const Navbar = () => {
   return (
@@ -15,7 +15,7 @@ const Navbar = () => {
             <BtnContactUs name="Contact Us" link="#ContactUs"/>
           </div>
           <div className="pr-6 right-0">
-            <BtnContactUs name="Try it" link="app"/>
+            <BtnRouter name="Try it" link="app"/>
           </div>
         </div>
       </nav>

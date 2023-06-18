@@ -10,6 +10,9 @@ import { teampics } from "./team";
 import twitter from "./twitter.png";
 import linkedin from "./linkedin.png";
 import mobilelanding from "./mobilelanding.jpg";
+import searchicon from "./search-icon.png";
+import dropdownarrow from "./dropdown.png";
+import pencil from "./pencil.png"
 
 export {
     logo,
@@ -24,4 +27,7 @@ export {
     twitter,
     linkedin,
     mobilelanding,
+    searchicon,
+    dropdownarrow,
+    pencil,
 }

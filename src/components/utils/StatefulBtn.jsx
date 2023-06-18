@@ -1,15 +1,12 @@
 import React from 'react'
 
-const StatefulBtn = ({tools}) => {
-    const state = tools[0];
-    const setState = tools[1];
-    var color = state ? "bg-blue-500" : "bg-blue-300";
+const StatefulBtn = ({onClick, btnstyle, text}) => {
   return (
-    <div className='py-4 flex flex-row w-full justify-center'>
-        <button className={`px-4 py-4 rounded ${color} w-[90%]`} onClick={() => {state ? setState(false) : setState(true)}}>
-            {state ? "Deactivate area selection" : "Activate area selection"}
-        </button>
-    </div>
+    <button className={`${btnstyle}`} onClick={onClick}>
+      <h1 className='text-[18px] px-4 py-2'>
+        {text}
+      </h1>
+    </button>
   )
 }
 

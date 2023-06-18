@@ -4,6 +4,7 @@ const styles = {
     paragraph2: "text-[1rem] md:text-[18px] text-justify text-dimWhite",
     btnContactUs: "text-white bg-gradient-to-r from-gray-900 to-gray-700",
     btnContactUsHover: "hover:bg-gradient-to-r hover:from-gray-500 hover:to-gray-300 hover:text-black",
+    btn1: "text-white bg-gradient-to-r from-gray-900 to-gray-700 hover:bg-gradient-to-r hover:from-gray-500 hover:to-gray-300 hover:text-black flex flex-col items-center justify-center rounded-full p-[1px] min-w-[100px] max-w-[146px]",
     formTitle: "",
     formContent: "",
 
