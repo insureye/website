@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Helmet } from 'react-helmet';
 import {
     MapContainer,
     TileLayer,
@@ -6,53 +7,65 @@ import {
   } from 'react-leaflet';
 import {StatefulBtn, DropdownBtn, PanelVariable} from '../components';
 import styles from '../style';
-import {pencil} from "../assets";
+import {pencil, logoImage} from "../assets";
 import { Link, useLocation } from 'react-router-dom';
 
 const data = [
   {
     name: '2017',
-    uv: 4000,
+    uv: 90,
     pv: 2400,
     amt: 2400,
   },
   {
     name: '2018',
-    uv: 3000,
+    uv: 80,
     pv: 1398,
     amt: 2210,
   },
   {
     name: '2019',
-    uv: 2000,
+    uv: 110,
     pv: 9800,
     amt: 2290,
   },
   {
     name: '2020',
-    uv: 2780,
+    uv: 70,
     pv: 3908,
     amt: 2000,
   },
   {
     name: '2021',
-    uv: 1890,
+    uv: 120,
     pv: 4800,
     amt: 2181,
   },
   {
     name: '2022',
-    uv: 2390,
+    uv: 90,
     pv: 3800,
     amt: 2500,
   },
   {
     name: '2023',
-    uv: 3490,
+    uv: 60,
     pv: 4300,
     amt: 2100,
   },
 ];
+
+function gravityCenter(points) {
+  var [avgX, avgY] = [0, 0]
+  for (const point in points) {
+    console.log(point)
+    avgX += points[point].lat;
+    avgY += points[point].lng;
+  }
+  console.log(avgX)
+  var l = points.length;
+  return([avgX/l, avgY/l])
+}
 
 const Dashboard = () => {
 
@@ -64,6 +77,10 @@ const Dashboard = () => {
 
   return (
     <div className='flex flex-row w-screen h-screen bg-[#222222]'>
+        <Helmet>
+          <title>InsurEye</title>
+          <link rel="icon" type="image/png" href={logoImage} sizes="16x16" />
+        </Helmet>
         <div className='flex flex-col h-screen w-[15%]'>
             <div className='flex flex-col h-[30%] pl-10 pt-10'>
                 <h1 className={`${styles.paragraph} pb-2`}>Time</h1>
@@ -108,7 +125,7 @@ const Dashboard = () => {
                 </div>
 
                 <div className='w-[50%] px-4'>
-                    <MapContainer className="h-full w-[90%] px-10 py-10 rounded border-white border" center={location.state.mapState.center} zoom={location.state.mapState.zoom} scrollWheelZoom={true}>
+                    <MapContainer className="h-full w-[90%] px-10 py-10 rounded border-white border" center={gravityCenter(location.state.polygonPoints)} zoom={location.state.mapState.zoom} scrollWheelZoom={true}>
                         <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
                         <Polygon pathOptions={{ color : 'white'}} positions={location.state.polygonPoints} />
                     </MapContainer>
@@ -119,15 +136,15 @@ const Dashboard = () => {
             <div className='flex flex-row h-[70%] py-5'>
                 <div className='flex flex-col w-[50%] px-4'>
                     <div className='h-[50%] py-4'>
-                        <PanelVariable name="Water" data={data} limit={3000}/>
+                        <PanelVariable name="Water" data={data} limit={100}/>
                     </div>
                     <div className='h-[50%] py-4'>
-                        <PanelVariable name="Ground" data={data} limit={3000}/>
+                        <PanelVariable name="Ground" data={data} limit={100}/>
                     </div>
                 </div>
                 <div className='flex flex-col w-[50%] px-4'>
                     <div className='h-[50%] py-4'>
-                        <PanelVariable name="Air" data={data} limit={3000}/>
+                        <PanelVariable name="Air" data={data} limit={100}/>
                     </div>
                     <div className='flex flex-row h-[50%] py-4 justify-center items-center'>
                         <StatefulBtn btnstyle={styles.btn1} text="Download report"/>

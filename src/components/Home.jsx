@@ -1,10 +1,15 @@
 import React from 'react'
+import { Helmet } from 'react-helmet';
 import styles from '../style.js'
-import { landingvideo } from '../assets/index.js';
+import { landingvideo, logoImage } from '../assets/index.js';
 import { Navbar, Hero, Features, Description, Workflow, CTA, Team, ContactUs, Footer, Satellite } from './index.js';
 
 const Home = () => (
     <div className='bg-black w-screen overflow-hidden'>
+      <Helmet>
+        <title>InsurEye</title>
+        <link rel="icon" type="image/png" href={logoImage} sizes="16x16" />
+      </Helmet>
       <div className='static w-screen'>
         <div className='flex flex-col h-screen items-center'>
           <div className='top-0 w-screen z-20'>
@@ -31,7 +36,7 @@ const Home = () => (
         </div>
       </div>
 
-      <div className={`bg-primary ${styles.paddingX} flex justify-center`}>
+      <div className={`bg-[#222222] ${styles.paddingX} flex justify-center`}>
         <div className={`${styles.boxWidth}`}>
           <Description/>
           <Satellite/>
@@ -48,7 +53,7 @@ const Home = () => (
       </div>
       
 
-      <div className={`bg-primary ${styles.paddingX} flex justify-center pb-10`}>
+      <div className={`bg-[#222222] ${styles.paddingX} flex justify-center pb-10`}>
         <div className={`${styles.boxWidth}`}>
           <Team/>
           <div id="ContactUs">

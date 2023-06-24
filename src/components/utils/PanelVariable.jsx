@@ -36,8 +36,8 @@ const PanelVariable = ({name, data, limit}) => {
                 <h1 className={`${styles.paragraph2} leading-[30.8px]`}>Vulnerability</h1>
             </div>
             <div className='flex flex-col px-2'>
-                <h1 className='text-white text-[1rem] leading-[30.8px]'>123.456ca</h1>
-                <h1 className='text-white text-[1rem] leading-[30.8px]'>165.432ca</h1>
+                <h1 className='text-white text-[1rem] leading-[30.8px]'>63%</h1>
+                <h1 className='text-white text-[1rem] leading-[30.8px]'>81%</h1>
             </div>
         </div>
       </div>

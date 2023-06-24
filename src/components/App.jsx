@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 import {
   MapContainer,
@@ -11,6 +12,7 @@ import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
 import StatefulBtn from './utils/StatefulBtn';
 import { app } from '../constants'
 import styles from '../style';
+import { logoImage } from '../assets';
 
 function locationChange(setMapState, result, zoom) {
   setMapState({center:[result.lat, result.lng], zoom:zoom})
@@ -63,6 +65,10 @@ const App = () => {
   
   return (
     <div className='flex flex-col bg-[#222222] h-screen w-screen items-start'>
+        <Helmet>
+          <title>InsurEye</title>
+          <link rel="icon" type="image/png" href={logoImage} sizes="16x16" />
+        </Helmet>
         <h1 className='text-white text-[25px] py-10 px-10'>{app.title}</h1>
         {/*
         <div className='px-10 py-4 w-full'>
