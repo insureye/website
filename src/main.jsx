@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'leaflet-geosearch/dist/geosearch.css';
 import './index.css'
 
+
 const router = createBrowserRouter([
   { path: '/', element: <Home /> },
   { path: 'app', element: <App />},

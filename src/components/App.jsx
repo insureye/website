@@ -12,8 +12,11 @@ import StatefulBtn from './utils/StatefulBtn';
 import { app } from '../constants'
 import styles from '../style';
 
+function locationChange(setMapState, result, zoom) {
+  setMapState({center:[result.lat, result.lng], zoom:zoom})
+}
 
-function LeafletgeoSearch() {
+function LeafletgeoSearch({setMapState}) {
   const map = useMap(); //here use useMap hook
 
   useEffect(() => {
@@ -25,20 +28,11 @@ function LeafletgeoSearch() {
     });
 
     map.addControl(searchControl);
+    map.on('moveend', (result) => locationChange(setMapState, map.getCenter(), map.getZoom()))
     return () => map.removeControl(searchControl)
   }, []);
 
   return null;
-}
-
-
-async function flyToLocation(location) {
-  const map = useMap();
-  const provider = new OpenStreetMapProvider();
-  const results = await provider.search({ query: location });
-  console.log(results)
-
-  map.flyTo([results.y, results.x], 10)
 }
 
 function PolygonDrawer({areaSelection, polygonPoints, setPolygonPoints}) {
@@ -49,46 +43,41 @@ function PolygonDrawer({areaSelection, polygonPoints, setPolygonPoints}) {
   });
 
   return (
-    <Polygon pathOptions={{ color : 'black'}} positions={polygonPoints} />
+    <Polygon pathOptions={{ color : 'white'}} positions={polygonPoints} />
   )
 }
 
-function MapBtnClickHandler(state, setState, navigate) {
+function MapBtnClickHandler(state, setState, polygonPoints, mapState, navigate) {
   if (state) {
-    navigate("/dashboard")
+    navigate("/dashboard", {state:{polygonPoints:polygonPoints, mapState:mapState}})
   } else {
     setState(!state)
   }
 }
 
 const App = () => {
-  const [areaSelection, setAreaSelection] = useState(false);
   const [polygonPoints, setPolygonPoints] = useState([]);
-  const [location, setLocation] = useState([51.505, -0.09]);
+  const [areaSelection, setAreaSelection] = useState(false);
+  const [mapState, setMapState] = useState({center:[51.505, -0.09], zoom:10})
   const navigate = useNavigate();
   
   return (
     <div className='flex flex-col bg-[#222222] h-screen w-screen items-start'>
-        <h1 className='text-white text-[25px] pt-10 px-10'>{app.title}</h1>
+        <h1 className='text-white text-[25px] py-10 px-10'>{app.title}</h1>
+        {/*
         <div className='px-10 py-4 w-full'>
-          <input type="text" placeholder="Region, city, coordinate" className={`placeholder-dimWhite text-white border border-white bg-black bg-opacity-10 rounded pl-6 pr-[30%] py-2`} onKeyDown={
-            (e) => {
-              if (e.key === 'Enter') {
-                setLocation(this.value);
-                flyToLocation(this.value);
-              }
-            }
-          }/>
+          <input type="text" placeholder="Region, city, coordinate" className={`placeholder-dimWhite text-white border border-white bg-black bg-opacity-10 rounded pl-6 pr-[30%] py-2`}
+          />
         </div>
-
+        */}
         <div className="flex flex-col px-10 pb-10 w-screen h-full items-center">
           <MapContainer className="h-full w-full px-10 py-10 rounded border-white border" center={[51.505, -0.09]} zoom={10} scrollWheelZoom={true}>
             <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
             <PolygonDrawer areaSelection={areaSelection} polygonPoints={polygonPoints} setPolygonPoints={setPolygonPoints}/>
-            <LeafletgeoSearch/>
+            <LeafletgeoSearch setMapState={setMapState}/>
           </MapContainer>
           <div className='absolute bottom-[10%] z-[1000] '>
-            <StatefulBtn onClick={() => MapBtnClickHandler(areaSelection, setAreaSelection, navigate)} btnstyle={styles.btn1} text={areaSelection? "Analyze":"Draw your area"}/>
+            <StatefulBtn onClick={() => MapBtnClickHandler(areaSelection, setAreaSelection, polygonPoints, mapState, navigate)} btnstyle={styles.btn1} text={areaSelection? "Analyze":"Draw your area"}/>
           </div>
         </div>
     </div>

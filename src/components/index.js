@@ -22,6 +22,8 @@ import BtnRouter from "./utils/BtnRouter";
 import Dashboard from "./Dashboard";
 import DropdownBtn from "./utils/DropdownBtn";
 import PanelVariable from "./utils/PanelVariable";
+import Chart from "./utils/Chart";
+import RiskGauge from "./utils/RiskGauge";
 
 export {
     Navbar,
@@ -47,5 +49,7 @@ export {
     BtnRouter,
     Dashboard,
     DropdownBtn,
-    PanelVariable
+    PanelVariable,
+    Chart,
+    RiskGauge
 }
